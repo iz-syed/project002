@@ -18,7 +18,13 @@ const routes: Routes = [
   },
   {
     path:'',
-    component: FullComponent
+    component: FullComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule)
+      }
+    ]
   }
 ];
 
