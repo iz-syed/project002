@@ -7,7 +7,14 @@ import { FullComponent } from './layouts/full/full.component';
 const routes: Routes = [
   {
     path: '',
-    component: BlankComponent
+    component: BlankComponent,
+    children: [
+      {
+        path: 'auth',
+        loadChildren: () => import('./pages/auth/auth.module').then(m => m.AuthModule)
+      }
+    ]
+    
   },
   {
     path:'',
