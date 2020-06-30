@@ -9,21 +9,23 @@ const routes: Routes = [
     path: '',
     component: BlankComponent,
     children: [
+      { path: '', redirectTo: '/home', pathMatch: 'full' },
       {
         path: 'auth',
         loadChildren: () => import('./pages/auth/auth.module').then(m => m.AuthModule)
       }
     ]
-    
+
   },
   {
     path:'',
     component: FullComponent,
-    children: [
+    children:[
       {
         path: '',
         loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule)
       }
+      
     ]
   }
 ];

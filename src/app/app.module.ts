@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -7,6 +8,7 @@ import { BlankComponent } from './layouts/blank/blank.component';
 import { FullComponent } from './layouts/full/full.component';
 import { SharedModule } from './shared/shared.module';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,9 +16,11 @@ import { SharedModule } from './shared/shared.module';
     FullComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     SharedModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
